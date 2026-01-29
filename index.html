@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Finder</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- Floating Search Panel -->
+        <div class="glass-panel">
+            <h1>Route Finder</h1>
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <span class="icon">📍</span>
+                    <input type="text" id="start-input" placeholder="出発地 (例: 東京駅)">
+                </div>
+                <div class="connector"></div>
+                <div class="input-wrapper">
+                    <span class="icon">🏁</span>
+                    <input type="text" id="dest-input" placeholder="目的地 (例: 新宿駅)">
+                </div>
+            </div>
+            
+            <button id="search-btn">経路を検索</button>
+
+            <!-- Results Section -->
+            <div id="result-info" class="result-hidden">
+                <div class="info-item">
+                    <span class="label">距離</span>
+                    <span class="value" id="distance-val">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">時間</span>
+                    <span class="value" id="duration-val">-</span>
+                </div>
+            </div>
+            <div id="error-msg" class="error-hidden"></div>
+        </div>
+
+        <!-- Map Container -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>
